@@ -23,7 +23,7 @@ jobs:
       - name: Install tooling
         run: |
           pacman -Syu --noconfirm --needed \
-            git zip unzip python libxml2 qt6-declarative kpackage
+            git zip unzip python libxml2 qt6-declarative kpackage libplasma
       - uses: actions/checkout@v4
       - name: Static checks
         run: ./scripts/check.sh
