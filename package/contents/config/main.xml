@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kcfg xmlns="http://www.kde.org/standards/kcfg/1.0"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.kde.org/standards/kcfg/1.0 http://www.kde.org/standards/kcfg/1.0/kcfg.xsd">
+  <group name="General">
+    <entry name="thumbWidth" type="Int">
+      <label>Thumbnail width in pixels</label>
+      <default>260</default>
+      <min>100</min>
+      <max>700</max>
+    </entry>
+    <entry name="thumbOpacity" type="Int">
+      <label>Thumbnail opacity in percent</label>
+      <default>60</default>
+      <min>10</min>
+      <max>100</max>
+    </entry>
+    <entry name="backdropOpacity" type="Int">
+      <label>Backdrop opacity in percent</label>
+      <default>25</default>
+      <min>0</min>
+      <max>100</max>
+    </entry>
+    <entry name="topPercent" type="Int">
+      <label>Top of the column, percent of screen height</label>
+      <default>25</default>
+      <min>0</min>
+      <max>90</max>
+    </entry>
+    <entry name="edgeMargin" type="Int">
+      <label>Gap from the screen edge in pixels</label>
+      <default>12</default>
+      <min>0</min>
+      <max>300</max>
+    </entry>
+    <entry name="bottomMargin" type="Int">
+      <label>Space kept clear at the bottom in pixels</label>
+      <default>64</default>
+      <min>0</min>
+      <max>400</max>
+    </entry>
+    <entry name="side" type="Int">
+      <label>Screen side: 0 = right, 1 = left</label>
+      <default>0</default>
+      <min>0</min>
+      <max>1</max>
+    </entry>
+  </group>
+</kcfg>

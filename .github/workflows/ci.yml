@@ -1,0 +1,70 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # Plasma 6 tooling (kpackagetool6, Qt 6 qmllint) is easiest to get on Arch.
+  package:
+    name: Lint, build and install-test the plasmoid
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - name: Install tooling
+        run: |
+          pacman -Syu --noconfirm --needed \
+            git zip unzip python libxml2 qt6-declarative kpackage
+      - uses: actions/checkout@v4
+      - name: Static checks
+        run: ./scripts/check.sh
+      - name: Build .plasmoid
+        run: ./scripts/build.sh
+      - name: Test install with kpackagetool6
+        run: |
+          root=$(mktemp -d)
+          kpackagetool6 --type Plasma/Applet --packageroot "$root" \
+            --install dist/*.plasmoid
+          test -f "$root/org.defer.windowoverlay/metadata.json"
+          test -f "$root/org.defer.windowoverlay/contents/ui/main.qml"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: plasmoid
+          path: dist/
+          if-no-files-found: error
+
+  shellcheck:
+    name: ShellCheck
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: shellcheck scripts/*.sh
+
+  actionlint:
+    name: Lint workflows
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: raven-actions/actionlint@v2
+
+  docs:
+    name: Check README and docs links
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: lycheeverse/lychee-action@v2
+        with:
+          # The repo's own URLs only exist once pushed, and badges can be flaky.
+          args: >-
+            --no-progress --offline --include-fragments
+            README.md CHANGELOG.md CONTRIBUTING.md docs/*.md
+          fail: true

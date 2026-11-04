@@ -1,0 +1,6 @@
+dist/
+release-notes.md
+*.plasmoid
+*.orig
+*.rej
+.DS_Store

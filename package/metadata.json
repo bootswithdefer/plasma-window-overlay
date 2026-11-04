@@ -1,0 +1,21 @@
+{
+    "KPackageStructure": "Plasma/Applet",
+    "KPlugin": {
+        "Id": "org.defer.windowoverlay",
+        "Name": "Window Overlay",
+        "Description": "Floating translucent window thumbnails on every screen",
+        "Icon": "view-list-icons",
+        "Authors": [
+            {
+                "Name": "bootswithdefer"
+            }
+        ],
+        "License": "MIT",
+        "Version": "0.1.0",
+        "Website": "https://github.com/bootswithdefer/plasma-window-overlay",
+        "BugReportUrl": "https://github.com/bootswithdefer/plasma-window-overlay/issues",
+        "Category": "Windows and Tasks"
+    },
+    "X-Plasma-API-Minimum-Version": "6.0",
+    "X-Plasma-Provides": []
+}

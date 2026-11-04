@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 640" width="1200" height="640" role="img" aria-label="Illustration of the overlay: a column of window thumbnails on the right edge of each of three monitors">
+<defs>
+<linearGradient id="bgd" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#151a24"/><stop offset="1" stop-color="#0e121a"/></linearGradient>
+<style>
+ .mon{fill:#0b0f16;stroke:#3a4458;stroke-width:3}
+ .win{fill:#202938}
+ .bar{fill:#2b3548}
+ .line{fill:#4a5873}
+ .lbl{font:600 15px 'Noto Sans','DejaVu Sans',sans-serif;fill:#9fb0cc}
+ .cap{font:500 14px 'Noto Sans','DejaVu Sans',sans-serif;fill:#7d8ca6}
+ .t{font:10px 'Noto Sans','DejaVu Sans',sans-serif;fill:#e8eef9}
+ .strip{fill:#000;fill-opacity:.28}
+ .thumb{fill:#ffffff;fill-opacity:.55}
+ .act{fill:#3daee9;fill-opacity:.9;stroke:#bfe6fa;stroke-width:2}
+</style></defs>
+<rect width="1200" height="640" rx="20" fill="url(#bgd)"/>
+<rect class="mon" x="60" y="50" width="520" height="290" rx="8"/>
+<rect class="win" x="66" y="56" width="508" height="278"/>
+<rect class="bar" x="66" y="56" width="508" height="22"/>
+<rect class="line" x="90" y="100" width="157" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="90" y="125" width="323" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="90" y="150" width="220" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="90" y="174" width="385" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="90" y="199" width="282" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="90" y="224" width="179" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="strip" x="471" y="122" width="97" height="202" rx="8"/>
+<rect class="thumb" x="477" y="128" width="85" height="48" rx="4"/>
+<text class="t" x="481" y="187">Terminal</text>
+<rect class="act" x="477" y="192" width="85" height="48" rx="4"/>
+<text class="t" x="481" y="251">Editor</text>
+<rect class="thumb" x="477" y="256" width="85" height="48" rx="4"/>
+<text class="t" x="481" y="315">Notes</text>
+<text class="lbl" x="320.0" y="364" text-anchor="middle">Monitor 1</text>
+<rect class="mon" x="620" y="50" width="520" height="290" rx="8"/>
+<rect class="win" x="626" y="56" width="508" height="278"/>
+<rect class="bar" x="626" y="56" width="508" height="22"/>
+<rect class="line" x="650" y="100" width="233" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="650" y="122" width="399" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="650" y="144" width="296" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="650" y="166" width="193" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="650" y="188" width="358" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="650" y="210" width="255" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="650" y="232" width="421" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="650" y="254" width="318" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="strip" x="1060" y="122" width="68" height="202" rx="8"/>
+<rect class="act" x="1066" y="128" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="171">Browser</text>
+<rect class="thumb" x="1066" y="176" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="219">Chat</text>
+<rect class="thumb" x="1066" y="224" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="267">Docs</text>
+<rect class="thumb" x="1066" y="272" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="315">Files</text>
+<text class="lbl" x="880.0" y="364" text-anchor="middle">Monitor 2</text>
+<rect class="mon" x="840" y="395" width="300" height="170" rx="8"/>
+<rect class="win" x="846" y="401" width="288" height="158"/>
+<rect class="bar" x="846" y="401" width="288" height="22"/>
+<rect class="line" x="870" y="445" width="157" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="870" y="453" width="105" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="461" width="189" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="468" width="137" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="870" y="476" width="84" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="484" width="169" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="492" width="116" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="line" x="870" y="500" width="201" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="507" width="148" height="8" rx="4" fill-opacity="0.55"/>
+<rect class="line" x="870" y="515" width="96" height="8" rx="4" fill-opacity="0.9"/>
+<rect class="strip" x="1060" y="437" width="68" height="106" rx="8"/>
+<rect class="thumb" x="1066" y="443" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="486">Mail</text>
+<rect class="act" x="1066" y="491" width="56" height="32" rx="4"/>
+<text class="t" x="1070" y="534">Calendar</text>
+<text class="lbl" x="990.0" y="589" text-anchor="middle">Monitor 3</text>
+<text class="cap" x="60" y="560">Illustration only: mock windows and approximate layout, not a real screenshot.</text>
+<text class="cap" x="60" y="584">Each monitor gets its own translucent column listing just that screen's windows;</text>
+<text class="cap" x="60" y="604">the highlighted tile is the focused window, and clicking a tile focuses it.</text>
+</svg>

@@ -1,0 +1,43 @@
+name: Bug report
+description: Something doesn't work or draws wrong
+labels: [bug]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you expect, and what did you see instead? Screenshots are welcome, but please crop out private content.
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+    validations:
+      required: true
+  - type: input
+    id: plasma
+    attributes:
+      label: Plasma version
+      description: Output of `plasmashell --version`
+      placeholder: plasmashell 6.8.2
+    validations:
+      required: true
+  - type: dropdown
+    id: session
+    attributes:
+      label: Session type
+      options: [Wayland, X11]
+    validations:
+      required: true
+  - type: input
+    id: monitors
+    attributes:
+      label: Monitor setup
+      placeholder: "3 monitors, mixed resolutions, 1.0 / 1.25 scaling"
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs
+      description: Run `QT_FORCE_STDERR_LOGGING=1 plasmawindowed org.defer.windowoverlay` in a terminal and paste any errors.
+      render: text

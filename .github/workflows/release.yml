@@ -1,0 +1,55 @@
+name: Release
+
+on:
+  push:
+    tags: ["v*.*.*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    name: Build and publish release
+    runs-on: ubuntu-latest
+    container: archlinux:latest
+    steps:
+      - name: Install tooling
+        run: pacman -Syu --noconfirm --needed git zip unzip python libxml2 qt6-declarative kpackage github-cli
+      - uses: actions/checkout@v4
+      - name: Trust workspace
+        run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
+
+      - name: Tag must match package version
+        run: |
+          version=$(python3 -c 'import json;print(json.load(open("package/metadata.json"))["KPlugin"]["Version"])')
+          if [ "v${version}" != "${GITHUB_REF_NAME}" ]; then
+            echo "::error::Tag ${GITHUB_REF_NAME} does not match metadata.json version v${version}"
+            exit 1
+          fi
+
+      - name: Static checks
+        run: ./scripts/check.sh
+
+      - name: Build
+        run: ./scripts/build.sh
+
+      - name: Extract release notes from CHANGELOG
+        run: |
+          python3 - <<'PY'
+          import os, re, pathlib
+          tag = os.environ["GITHUB_REF_NAME"].lstrip("v")
+          text = pathlib.Path("CHANGELOG.md").read_text()
+          m = re.search(rf"^## \[{re.escape(tag)}\][^\n]*\n(.*?)(?=^## \[|^\[Unreleased\]:|\Z)", text, re.S | re.M)
+          notes = (m.group(1).strip() if m else "") or "See the CHANGELOG for details."
+          pathlib.Path("release-notes.md").write_text(notes + "\n")
+          PY
+
+      - name: Create GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" \
+            --repo "$GITHUB_REPOSITORY" \
+            --title "$GITHUB_REF_NAME" \
+            --notes-file release-notes.md \
+            dist/*.plasmoid dist/*.sha256
