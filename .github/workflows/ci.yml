@@ -34,8 +34,8 @@ jobs:
           root=$(mktemp -d)
           kpackagetool6 --type Plasma/Applet --packageroot "$root" \
             --install dist/*.plasmoid
-          test -f "$root/org.defer.windowoverlay/metadata.json"
-          test -f "$root/org.defer.windowoverlay/contents/ui/main.qml"
+          test -f "$root/build.abort.windowoverlay/metadata.json"
+          test -f "$root/build.abort.windowoverlay/contents/ui/main.qml"
       - uses: actions/upload-artifact@v4
         with:
           name: plasmoid

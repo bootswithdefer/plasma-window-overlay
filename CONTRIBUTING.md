@@ -10,7 +10,7 @@ You need KDE Plasma 6 and `kpackagetool6`. Then:
 git clone https://github.com/bootswithdefer/plasma-window-overlay.git
 cd plasma-window-overlay
 ./scripts/install.sh
-QT_FORCE_STDERR_LOGGING=1 plasmawindowed org.defer.windowoverlay
+QT_FORCE_STDERR_LOGGING=1 plasmawindowed build.abort.windowoverlay
 ```
 
 `plasmawindowed` runs the widget in a test window, and any QML errors print to the terminal.
@@ -30,7 +30,7 @@ running the widget from a panel.
 ## Reporting bugs
 
 Use the bug report template, and include your Plasma version, session type and monitor layout.
-Output from `QT_FORCE_STDERR_LOGGING=1 plasmawindowed org.defer.windowoverlay` helps a lot.
+Output from `QT_FORCE_STDERR_LOGGING=1 plasmawindowed build.abort.windowoverlay` helps a lot.
 
 ## Releasing (maintainer)
 

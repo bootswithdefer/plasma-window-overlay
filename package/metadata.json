@@ -1,7 +1,7 @@
 {
     "KPackageStructure": "Plasma/Applet",
     "KPlugin": {
-        "Id": "org.defer.windowoverlay",
+        "Id": "build.abort.windowoverlay",
         "Name": "Window Overlay",
         "Description": "Floating translucent window thumbnails on every screen",
         "Icon": "view-list-icons",

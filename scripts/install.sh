@@ -10,6 +10,6 @@ else
 fi
 echo
 echo "Installed. Add 'Window Overlay' from the panel's 'Add or Manage Widgets', or test with:"
-echo "  plasmawindowed org.defer.windowoverlay"
+echo "  plasmawindowed build.abort.windowoverlay"
 echo "If upgrading, restart Plasma to load the new version:"
 echo "  systemctl --user restart plasma-plasmashell"

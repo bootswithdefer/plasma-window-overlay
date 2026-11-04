@@ -5,7 +5,7 @@
 ## How I tested it
 
 - [ ] `./scripts/check.sh` passes
-- [ ] Ran it with `plasmawindowed org.defer.windowoverlay` (or on a panel) on Plasma 6
+- [ ] Ran it with `plasmawindowed build.abort.windowoverlay` (or on a panel) on Plasma 6
 - [ ] Session: Wayland / X11 (circle one)
 
 ## Notes

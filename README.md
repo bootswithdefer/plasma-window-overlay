@@ -52,11 +52,11 @@ monitor**, listing only the windows on that monitor. Click a tile to focus that 
 
 ### From a release (recommended)
 
-Download `org.defer.windowoverlay-<version>.plasmoid` from the
+Download `build.abort.windowoverlay-<version>.plasmoid` from the
 [Releases page](https://github.com/bootswithdefer/plasma-window-overlay/releases), then:
 
 ```sh
-kpackagetool6 --type Plasma/Applet --install org.defer.windowoverlay-<version>.plasmoid
+kpackagetool6 --type Plasma/Applet --install build.abort.windowoverlay-<version>.plasmoid
 ```
 
 You can also use **Add or Manage Widgets → Get New Widgets → Install Widget From Local File…**.
@@ -78,7 +78,7 @@ cd plasma-window-overlay
 ### Uninstall
 
 ```sh
-kpackagetool6 --type Plasma/Applet --remove org.defer.windowoverlay
+kpackagetool6 --type Plasma/Applet --remove build.abort.windowoverlay
 ```
 
 ## Use
@@ -93,7 +93,7 @@ themselves are separate windows and float anywhere on screen.
 To try it without adding it to a panel:
 
 ```sh
-plasmawindowed org.defer.windowoverlay
+plasmawindowed build.abort.windowoverlay
 ```
 
 Closing that test window stops the overlays.
@@ -149,7 +149,7 @@ and put them in `docs/`.
 ./scripts/install.sh   # installs or upgrades into your user profile
 
 # Run with logging while you work:
-QT_FORCE_STDERR_LOGGING=1 plasmawindowed org.defer.windowoverlay
+QT_FORCE_STDERR_LOGGING=1 plasmawindowed build.abort.windowoverlay
 ```
 
 The package lives in [`package/`](package). Settings are declared in

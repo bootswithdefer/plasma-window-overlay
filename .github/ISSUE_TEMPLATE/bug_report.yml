@@ -39,5 +39,5 @@ body:
     id: logs
     attributes:
       label: Logs
-      description: Run `QT_FORCE_STDERR_LOGGING=1 plasmawindowed org.defer.windowoverlay` in a terminal and paste any errors.
+      description: Run `QT_FORCE_STDERR_LOGGING=1 plasmawindowed build.abort.windowoverlay` in a terminal and paste any errors.
       render: text
