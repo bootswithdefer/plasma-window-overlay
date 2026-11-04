@@ -24,7 +24,7 @@ jobs:
         run: |
           pacman -Syu --noconfirm --needed \
             git zip unzip python libxml2 qt6-declarative kpackage libplasma
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - name: Static checks
         run: ./scripts/check.sh
       - name: Build .plasmoid
@@ -36,7 +36,7 @@ jobs:
             --install dist/*.plasmoid
           test -f "$root/build.abort.windowoverlay/metadata.json"
           test -f "$root/build.abort.windowoverlay/contents/ui/main.qml"
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: plasmoid
           path: dist/
@@ -46,21 +46,21 @@ jobs:
     name: ShellCheck
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - run: shellcheck scripts/*.sh
 
   actionlint:
     name: Lint workflows
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: raven-actions/actionlint@v2
 
   docs:
     name: Check README and docs links
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
       - uses: lycheeverse/lychee-action@v2
         with:
           # The repo's own URLs only exist once pushed, and badges can be flaky.
